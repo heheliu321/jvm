@@ -1,0 +1,29 @@
+
+server:
+  address: 0.0.0.0
+  port: 8083
+  tomcat:
+    basedir: tomcat
+    accesslog:
+      enabled: false
+      pattern: "%t %a %r %s (%D ms) (%b byte) %{http_proxy_id}i %{x-request-id}i"
+spring:
+  #============== kafka ===================
+  # 指定kafka 代理地址，可以多个
+  kafka:
+    bootstrap-servers: 100.94.0.17:9092
+    #=============== provider  =======================
+    producer:
+      retries: 0
+      batch-size: 16384  # 每次批量发送消息的数量
+      buffer-memory: 33554432
+  redis:
+    database: 0
+    timeout: 20000
+    lettuce:
+      pool:
+        min-idle: 10
+        max-idle: 500
+        max-active: 500
+    cluster:
+      nodes: 100.94.12.75:7000,100.94.12.75:7001,100.94.12.75:7002,100.94.12.75:7003,100.94.12.75:7004,100.94.12.75:7005
