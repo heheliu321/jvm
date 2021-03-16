@@ -1,0 +1,1 @@
+-javaagent:D:\xxx\java_agent\target\java-agent-demo-1.0-SNAPSHOT.jar -Xms256m -Xmx256m -Xss256k -XX:MaxDirectMemorySize=256m -XX:+PrintGCDetails -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:gc.log
