@@ -11,7 +11,7 @@ public class MyInterceptor {
     @RuntimeType
     public static Object intercept(@Origin Method method,
         @SuperCall Callable<?> callable) {
-        // System.out.println("MyInterceptor start...");
+        System.out.println("MyInterceptor start...");
         long start = System.currentTimeMillis();
         try {
             //执行原方法
@@ -21,7 +21,7 @@ public class MyInterceptor {
                 }
                 return callable.call();
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("MyInterceptor----Exception" + e.toString());
                 return null;
             }
         } finally {
@@ -29,7 +29,7 @@ public class MyInterceptor {
             System.out.println(
                 method.getDeclaringClass() + "---" + method.getName() + ":" + (System.currentTimeMillis() - start)
                     + "ms");
-            // System.out.println("MyInterceptor end...");
+            System.out.println("MyInterceptor end...");
         }
     }
 }
