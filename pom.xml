@@ -7,6 +7,14 @@
     <groupId>com.itcast</groupId>
     <artifactId>jvm</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-    
+    <modules>
+<!--        <module>heima</module>-->
+        <module>java-agent-demo</module>
+        <module>java_agent_user</module>
+        <module>tuling</module>
+    </modules>
+
+
 </project>
